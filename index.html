@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Physics Lab</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Interactive Physics Lab</h1>
+        <p>Self-paced high school physics exercises</p>
+    </header>
+
+    <nav>
+        <button class="nav-btn active" data-topic="kinematics">Kinematics</button>
+        <button class="nav-btn" data-topic="waves">Waves</button>
+        <button class="nav-btn" data-topic="electromagnetism">Electromagnetism</button>
+    </nav>
+
+    <main>
+        <!-- Kinematics Section -->
+        <section id="kinematics" class="topic-section active">
+            <h2>Kinematics: Projectile Motion</h2>
+            <div class="exercise-container">
+                <div class="controls">
+                    <label>Initial Velocity: <span id="velocity-value">20</span> m/s</label>
+                    <input type="range" id="velocity-slider" min="10" max="50" value="20">
+                    
+                    <label>Launch Angle: <span id="angle-value">45</span>°</label>
+                    <input type="range" id="angle-slider" min="0" max="90" value="45">
+                    
+                    <button id="launch-btn">Launch</button>
+                    <button id="reset-btn">Reset</button>
+                </div>
+                <div id="kinematics-canvas" class="canvas-container"></div>
+                <div class="data-display">
+                    <p>Max Height: <span id="max-height">0</span> m</p>
+                    <p>Range: <span id="range">0</span> m</p>
+                    <p>Time of Flight: <span id="time-flight">0</span> s</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Waves Section -->
+        <section id="waves" class="topic-section">
+            <h2>Waves: Interference</h2>
+            <div class="exercise-container">
+                <div class="controls">
+                    <label>Frequency 1: <span id="freq1-value">2</span> Hz</label>
+                    <input type="range" id="freq1-slider" min="1" max="5" value="2" step="0.1">
+                    
+                    <label>Frequency 2: <span id="freq2-value">2</span> Hz</label>
+                    <input type="range" id="freq2-slider" min="1" max="5" value="2" step="0.1">
+                    
+                    <label>Phase Difference: <span id="phase-value">0</span>°</label>
+                    <input type="range" id="phase-slider" min="0" max="360" value="0">
+                    
+                    <button id="pause-btn">Pause/Resume</button>
+                </div>
+                <div id="waves-canvas" class="canvas-container"></div>
+                <div class="explanation">
+                    <p>Observe how two waves combine to form interference patterns!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Electromagnetism Section -->
+        <section id="electromagnetism" class="topic-section">
+            <h2>Electromagnetism: Electric Field Lines</h2>
+            <div class="exercise-container">
+                <div class="controls">
+                    <label>Charge 1: <span id="charge1-value">+1</span> μC</label>
+                    <input type="range" id="charge1-slider" min="-5" max="5" value="1">
+                    
+                    <label>Charge 2: <span id="charge2-value">-1</span> μC</label>
+                    <input type="range" id="charge2-slider" min="-5" max="5" value="-1">
+                    
+                    <button id="show-field-btn">Show Field Lines</button>
+                    <button id="show-equipotential-btn">Show Equipotential Lines</button>
+                </div>
+                <div id="em-canvas" class="canvas-container"></div>
+                <div class="explanation">
+                    <p>Visualize electric fields around point charges!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Interactive Physics Lab - Built for High School Students</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/kinematics.js"></script>
+    <script src="js/waves.js"></script>
+    <script src="js/electromagnetism.js"></script>
+</body>
+</html>
